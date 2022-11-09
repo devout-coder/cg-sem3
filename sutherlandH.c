@@ -8,9 +8,10 @@ int main()
     initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
     setcolor(RED);
     drawpoly(5, w);
+
     printf("Enter the no. of vertices of polygon: ");
     scanf("%d", &n);
-    x = malloc(n * 2 + 1);
+    *x = malloc(n * 2 + 1);
     printf("Enter the coordinates of points: ");
     k = 0;
     for (i = 0; i < n * 2; i += 2)
@@ -23,6 +24,7 @@ int main()
     x[n * 2 + 1] = x[1];
     setcolor(WHITE);
     drawpoly(n + 1, x);
+
     printf("\nPress any key to clip the polygon...");
     getch();
     setcolor(RED);
